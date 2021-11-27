@@ -36,14 +36,7 @@ const Header = () => {
         {({isOpen}) => (
           <>
             <MenuButton
-              _hover={{
-                fontWeight: "700",
-                textDecoration: "underline",
-              }}
               as={Button}
-              color="white"
-              fontFamily="Ubuntu"
-              fontWeight="400"
               rightIcon={
                 <ChevronDownIcon
                   display="block"
@@ -52,7 +45,6 @@ const Header = () => {
                 />
               }
               variant="unstyled"
-              width={28}
             >
               {props.menuLabel}
             </MenuButton>
@@ -83,7 +75,7 @@ const Header = () => {
       </Stack>
       <Stack direction="row">
         <Button variant="link">Login</Button>
-        <Button>Sign Up</Button>
+        <Button variant="solid">Sign Up</Button>
       </Stack>
 
       {/* <Text

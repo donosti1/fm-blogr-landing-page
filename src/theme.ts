@@ -36,6 +36,54 @@ export default extendTheme({
     Button: {
       baseStyle: {
         borderRadius: "full",
+        fontFamily: "Ubuntu",
+        fontWeight: "400",
+        height: 12,
+      },
+      variants: {
+        "footer-link": {
+          bg: "transparent",
+          color: "white",
+          h: 8,
+          _hover: {
+            textDecoration: "underline",
+          },
+        },
+        link: {
+          bg: "transparent",
+          color: "white",
+          width: 20,
+          _hover: {
+            fontWeight: "700",
+          },
+        },
+        solid: {
+          bg: "white",
+          color: "primary.300",
+          fontWeight: "700",
+          px: 8,
+          _hover: {
+            bg: "primary.300",
+            color: "white",
+          },
+        },
+        unstyled: {
+          width: 28,
+          color: "white",
+          _hover: {
+            fontWeight: "700",
+            textDecoration: "underline",
+          },
+        },
+        outline: {
+          fontWeight: "700",
+          color: "white",
+          px: 8,
+          _hover: {
+            bg: "white",
+            color: "primary.300",
+          },
+        },
       },
       sizes: {
         lg: {

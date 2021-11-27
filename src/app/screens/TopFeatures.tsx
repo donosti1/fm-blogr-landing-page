@@ -3,23 +3,20 @@ import {Stack} from "@chakra-ui/react";
 
 import Phrase from "./components/Phrase";
 import TopFeaturesDescription from "./components/TopFeaturesDescription";
+import TopPhrase from "./components/TopPhrase";
 
 const featuresItems = [
   {
     id: 0,
-    title: "Quick Search",
+    title: "Introducing an extensible editor",
     feature:
-      "Easily search your snippets by content, category, web address, application, and more. ",
+      "Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.",
   },
   {
     id: 1,
-    title: "iCloud Sync",
-    feature: "Instantly saves and syncs snippets across all your devices.",
-  },
-  {
-    id: 2,
-    title: "Complete History",
-    feature: "Retrieve any snippets from the first moment you started using the app.",
+    title: "Robust content management",
+    feature:
+      "Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.",
   },
 ];
 const TopFeatures = () => {
@@ -33,17 +30,14 @@ const TopFeatures = () => {
         backgroundRepeat={["no-repeat", "no-repeat"]}
         backgroundSize={["90%", "60%", "50%"]}
         className="TopFeatures"
-        spacing={[80, 24, 28]}
+        spacing={[80, 24, 8]}
         width="100%"
       >
         <Stack>
-          <Phrase
-            phrase="Clipboard instantly stores any item you copy in the cloud, meaning you can access your snippets immediately on all your devices. Our Mac and iOS apps will help you organize everything."
-            title="Keep track of your snippets"
-          />
+          <TopPhrase title="Designed for the future" />
         </Stack>
-        <Stack direction="row-reverse" paddingBottom={[8, 28, 24]} paddingRight={[0, 32]}>
-          <Stack spacing={12} width={["100%", "35%"]}>
+        <Stack direction="row" paddingBottom={[8, 28, 24]} paddingLeft={[0, 32]}>
+          <Stack spacing={12} width={["100%", "42%"]}>
             {items}
           </Stack>
         </Stack>

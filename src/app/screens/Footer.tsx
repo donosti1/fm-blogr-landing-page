@@ -1,76 +1,67 @@
 import React from "react";
-import {Grid, Icon, Image, Stack, Text} from "@chakra-ui/react";
+import {Button, Grid, Icon, Image, Stack, Text} from "@chakra-ui/react";
 
 import Logo from "/assets/logo.svg";
 
 import {AiFillFacebook, AiOutlineTwitter, AiOutlineInstagram} from "react-icons/ai";
-const navItems = [
-  {id: 0, label: "FAQs"},
-  {id: 1, label: "Contact Us"},
-  {id: 2, label: "Privacy Policy"},
-  {id: 3, label: "Press Kit"},
-  {id: 4, label: "Install Guide"},
+
+const productMenuItems = [
+  {id: 0, label: "Overview"},
+  {id: 1, label: "Pricing"},
+  {id: 2, label: "Marketplace"},
+  {id: 3, label: "Features"},
+  {id: 4, label: "Integrations"},
 ];
-const navBar = "";
-/*   const navBar = navItems.map((ni) => (
-  <Text
-    key={ni.id}
-    _hover={{cursor: "pointer", color: "primary.500"}}
-    textAlign={["center", "left"]}
-  >
-    {ni.label}
-  </Text>
-)); */
-const socialItems = [
-  {id: 0, icon: AiFillFacebook},
-  {id: 1, icon: AiOutlineTwitter},
-  {id: 2, icon: AiOutlineInstagram},
+const companyMenuItems = [
+  {id: 0, label: "About"},
+  {id: 1, label: "Team"},
+  {id: 2, label: "Blog"},
+  {id: 3, label: "Careers"},
 ];
-const socialBar = "";
-/*  const socialBar = socialItems.map((ni) => (
-  <Icon
-    key={ni.id}
-    _hover={{cursor: "pointer", color: "primary.500"}}
-    as={ni.icon}
-    height={8}
-    width={8}
-  />
-)); */
+const connectMenuItems = [
+  {id: 0, label: " Contact"},
+  {id: 1, label: "Newsletter"},
+  {id: 2, label: "LinkedIn"},
+];
+
+interface menuComponents {
+  menuLabel: string;
+  menuItems: {id: number; label: string}[];
+}
+const CustomMenuItem = (props: menuComponents) => {
+  const productMenuList = props.menuItems.map((mi) => (
+    <Button key={mi.id} color="secondary.100" fontSize="sm" variant="footer-link">
+      {mi.label}
+    </Button>
+  ));
+
+  return (
+    <Stack alignItems="flex-start" spacing={4}>
+      <Button fontWeight="700" variant="footer-link">
+        {props.menuLabel}
+      </Button>
+      <Stack alignItems="flex-start" spacing={0}>
+        {productMenuList}
+      </Stack>
+    </Stack>
+  );
+};
 const Footer = () => {
   return (
     <>
       <Stack
-        alignItems="center"
-        alignSelf="center"
         backgroundColor="primary.900"
         direction={["column", "row"]}
         justifyContent="space-between"
-        paddingTop={[8, 10]}
         paddingX={[4, 32]}
         paddingY={[4, 8]}
         spacing={[12, 0]}
         width="100%"
       >
-        <Image alt="logo" height={16} src={Logo} width={16} />
-        <Grid
-          color="secondary.500"
-          columnGap={20}
-          fontSize="lg"
-          gridAutoFlow="column"
-          paddingRight={[0, 24]}
-          rowGap={[8, 4]}
-          templateRows={["repeat(5,1fr)", "repeat(2,1fr)"]}
-        >
-          {navBar}
-        </Grid>
-        <Stack
-          alignItems="center"
-          color="secondary.500"
-          direction={["row", "row"]}
-          spacing={[8, 4]}
-        >
-          {socialBar}
-        </Stack>
+        <Image alt="logo" height={[32, 10]} src="assets/logo.svg" width={[32, 24]} />
+        <CustomMenuItem menuItems={productMenuItems} menuLabel="Product" />
+        <CustomMenuItem menuItems={companyMenuItems} menuLabel="Company" />
+        <CustomMenuItem menuItems={connectMenuItems} menuLabel="Connect" />
       </Stack>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import {Image, Stack, Text} from "@chakra-ui/react";
+import {Button, Image, Stack, Text} from "@chakra-ui/react";
 
 /* import Logo from "/assets/logo.svg"; */
 
@@ -28,7 +28,10 @@ const Hero = () => {
       <Text color="white" fontSize="xl" fontWeight="400" paddingTop={2}>
         Grow your audience and build your online brand
       </Text>
-      {/* <Buttons /> */}
+      <Stack direction="row" paddingTop={12} spacing={4}>
+        <Button variant="solid">Start for Free</Button>
+        <Button variant="outline">Learn More</Button>
+      </Stack>
     </Stack>
   );
 };
