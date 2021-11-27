@@ -51,6 +51,22 @@ export default extendTheme({
             textDecoration: "underline",
           },
         },
+        "header-link": {
+          bg: "transparent",
+          color: "black",
+          h: 8,
+          _hover: {
+            textDecoration: "underline",
+          },
+        },
+        "header-button": {
+          bg: "red",
+          color: "white",
+          h: 8,
+          _hover: {
+            textDecoration: "underline",
+          },
+        },
         link: {
           bg: "transparent",
           color: "white",
@@ -99,6 +115,15 @@ export default extendTheme({
     MenuButton: {
       baseStyle: {
         color: "white",
+      },
+    },
+    MenuItem: {
+      baseStyle: {
+        /* px: "0.8rem", */
+        _active: {
+          color: "white",
+          bg: "black",
+        },
       },
     },
   },

@@ -9,23 +9,36 @@ const Hero = () => {
   return (
     <Stack
       alignItems="center"
-      backgroundImage={[
-        " url('/assets/bg-pattern-intro.svg')",
-        "url('/assets/bg-pattern-intro.svg'),linear-gradient(to right,hsl(13, 100%, 72%),hsl(353, 100%, 62%))",
-      ]}
-      backgroundPosition={["center center", "23% 52%"]}
+      backgroundImage="url('/assets/bg-pattern-intro.svg'),linear-gradient(to right,hsl(13, 100%, 72%),hsl(353, 100%, 62%))"
+      backgroundPosition={["34% 38%", "23% 52%"]}
       backgroundRepeat="no-repeat"
-      backgroundSize={["cover", "250%"]}
+      backgroundSize={["350%", "250%"]}
       borderBottomLeftRadius={92}
       minHeight="90vh"
+      role="header"
       spacing={0}
       width="100%"
     >
       <Header />
-      <Text as="h1" color="white" fontSize="6xl" fontWeight="600" paddingTop={32}>
+      <Text
+        as="h1"
+        color="white"
+        fontSize={["4xl", "6xl"]}
+        fontWeight="600"
+        paddingTop={[36, 32]}
+        paddingX={[6, 0]}
+        textAlign={["center", "left"]}
+      >
         A modern publishing platform
       </Text>
-      <Text color="white" fontSize="xl" fontWeight="400" paddingTop={2}>
+      <Text
+        color="white"
+        fontSize="xl"
+        fontWeight="400"
+        paddingTop={2}
+        paddingX={[6, 0]}
+        textAlign={["center", "left"]}
+      >
         Grow your audience and build your online brand
       </Text>
       <Stack direction="row" paddingTop={12} spacing={4}>

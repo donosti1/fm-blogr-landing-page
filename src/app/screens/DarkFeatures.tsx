@@ -17,28 +17,35 @@ const DarkFeatures = () => {
   return (
     <>
       <Stack
+        alignItems={["center", "flex-end"]}
         backgroundColor="secondary.700"
         backgroundImage="url('/assets/bg-pattern-circles.svg')"
-        backgroundPosition={["50%  35%", "-59%  82%"]}
+        backgroundPosition={["50%  -580%", "-59%  82%"]}
         backgroundRepeat={["no-repeat", "no-repeat"]}
-        backgroundSize={["90%", "74%"]}
+        backgroundSize={["140%", "74%"]}
         borderBottomLeftRadius={92}
         borderTopRightRadius={92}
         className="DarkFeatures"
-        position="relative"
         /* spacing={[80, 24, 28]} */
+        position="relative"
         width="100%"
       >
         <Image
           alt="phones"
-          left={32}
+          left={[null, 32]}
           position="absolute"
           src="/assets/illustration-phones.svg"
-          top={-16}
-          width="40%"
+          top={[-44, -16]}
+          width={["95%", "40%"]}
         />
-        <Stack direction="row-reverse" paddingRight={[0, 28]} paddingY={[8, 28, 24]}>
-          <Stack spacing={12} width={["100%", "42%"]}>
+        <Stack
+          direction={["row", "row-reverse"]}
+          justifyContent={["center", "flex-start"]}
+          paddingBottom={[24, 24]}
+          paddingRight={[0, 28]}
+          paddingTop={[48, 28, 24]}
+        >
+          <Stack spacing={12} width={["80%", "68%"]}>
             {items}
           </Stack>
         </Stack>

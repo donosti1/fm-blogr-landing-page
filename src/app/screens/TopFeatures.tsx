@@ -26,19 +26,28 @@ const TopFeatures = () => {
   return (
     <>
       <Stack
-        backgroundImage="url('/assets/illustration-editor-desktop.svg')"
-        backgroundPosition={["50%  35%", "-25%  100%", "138%  60%"]}
+        backgroundImage={[
+          "url('/assets/illustration-editor-mobile.svg')",
+          "url('/assets/illustration-editor-desktop.svg')",
+        ]}
+        backgroundPosition={["50%  22%", "-25%  100%", "138%  60%"]}
         backgroundRepeat={["no-repeat", "no-repeat"]}
-        backgroundSize={["90%", "60%", "56%"]}
+        backgroundSize={["100%", "56%"]}
         className="TopFeatures"
         paddingBottom={[8, 28, 24]}
         spacing={[0, 0]}
         width="100%"
       >
-        <Stack paddingTop={32}>
+        <Stack paddingTop={[24, 32]}>
           <TopPhrase title="Designed for the future" />
         </Stack>
-        <Stack direction="row" paddingLeft={[0, 32]} paddingY={[8, 28, 24]}>
+        <Stack
+          direction="row"
+          paddingBottom={[52, 28, 24]}
+          paddingLeft={[6, 32]}
+          paddingRight={[6, 0]}
+          paddingTop={[96, 28, 24]}
+        >
           <Stack spacing={12} width={["100%", "42%"]}>
             {items}
           </Stack>

@@ -40,7 +40,7 @@ Users should be able to:
 - [Chakra UI](https://chakra-ui.com/) - React Component library
 - [ViteJS](https://vitejs.dev/) - ViteJS
 - Responsive Design
-- Gradients backgrounds with images
+- Gradients & bgImage
 
 ## Author
 

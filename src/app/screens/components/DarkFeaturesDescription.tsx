@@ -8,7 +8,14 @@ const DarkFeaturesDescription = (props: Feature) => {
   return (
     <>
       <Stack alignItems={["center", "flex-start"]} className="DarkFeaturesDescription" spacing={2}>
-        <Text as="h2" color="white" fontSize={["3xl", "4xl"]} fontWeight="700" letterSpacing="-1px">
+        <Text
+          as="h2"
+          color="white"
+          fontSize={["3xl", "4xl"]}
+          fontWeight="700"
+          letterSpacing="-1px"
+          textAlign={["center", "left"]}
+        >
           {props.title}
         </Text>
         <Text

@@ -24,17 +24,25 @@ const TopFeatures = () => {
   return (
     <>
       <Stack
-        backgroundImage="url('/assets/illustration-laptop-desktop.svg')"
-        backgroundPosition={["50%  35%", "-40%  50%"]}
+        alignItems={["center", "flex-end"]}
+        backgroundImage={[
+          "url('/assets/illustration-laptop-mobile.svg')",
+          "url('/assets/illustration-laptop-desktop.svg')",
+        ]}
+        backgroundPosition={["50%  5%", "-40%  50%"]}
         backgroundRepeat={["no-repeat", "no-repeat"]}
-        backgroundSize={["90%", "60%"]}
+        backgroundSize={["100%", "60%"]}
         className="TopFeatures"
-        paddingBottom={[8, 56]}
-        paddingTop={[8, 64]}
+        paddingBottom={[24, 56]}
+        paddingTop={[80, 64]}
         width="100%"
       >
-        <Stack direction="row-reverse" paddingRight={[0, 28]}>
-          <Stack spacing={12} width={["100%", "42%"]}>
+        <Stack
+          direction={["row", "row-reverse"]}
+          justifyContent={["center", "flex-start"]}
+          paddingRight={[0, 28]}
+        >
+          <Stack spacing={12} width={["80%", "42%"]}>
             {items}
           </Stack>
         </Stack>
