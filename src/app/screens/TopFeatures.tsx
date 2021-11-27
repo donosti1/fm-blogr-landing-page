@@ -1,9 +1,10 @@
 import React from "react";
-import {Stack} from "@chakra-ui/react";
+import {Image, Stack} from "@chakra-ui/react";
 
-import Phrase from "./components/Phrase";
-import TopFeaturesDescription from "./components/TopFeaturesDescription";
+import FeaturesDescription from "./components/FeaturesDescription";
 import TopPhrase from "./components/TopPhrase";
+
+import Pattern from "/assets/bg-pattern-circles.svg";
 
 const featuresItems = [
   {
@@ -20,23 +21,24 @@ const featuresItems = [
   },
 ];
 const TopFeatures = () => {
-  const items = featuresItems.map((it) => <TopFeaturesDescription key={it.id} {...it} />);
+  const items = featuresItems.map((it) => <FeaturesDescription key={it.id} {...it} />);
 
   return (
     <>
       <Stack
-        backgroundImage="url('/assets/image-computer.png')"
-        backgroundPosition={["50%  35%", "-25%  100%", "-4%  100%"]}
+        backgroundImage="url('/assets/illustration-editor-desktop.svg')"
+        backgroundPosition={["50%  35%", "-25%  100%", "138%  60%"]}
         backgroundRepeat={["no-repeat", "no-repeat"]}
-        backgroundSize={["90%", "60%", "50%"]}
+        backgroundSize={["90%", "60%", "56%"]}
         className="TopFeatures"
-        spacing={[80, 24, 8]}
+        paddingBottom={[8, 28, 24]}
+        spacing={[0, 0]}
         width="100%"
       >
-        <Stack>
+        <Stack paddingTop={32}>
           <TopPhrase title="Designed for the future" />
         </Stack>
-        <Stack direction="row" paddingBottom={[8, 28, 24]} paddingLeft={[0, 32]}>
+        <Stack direction="row" paddingLeft={[0, 32]} paddingY={[8, 28, 24]}>
           <Stack spacing={12} width={["100%", "42%"]}>
             {items}
           </Stack>

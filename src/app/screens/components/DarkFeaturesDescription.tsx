@@ -4,15 +4,15 @@ interface Feature {
   title: string;
   feature: string;
 }
-const TopFeaturesDescription = (props: Feature) => {
+const DarkFeaturesDescription = (props: Feature) => {
   return (
     <>
-      <Stack alignItems={["center", "flex-start"]} className="TopFeaturesDescription" spacing={2}>
-        <Text as="h2" color="primary.500" fontSize="2xl" fontWeight="700" letterSpacing="-1px">
+      <Stack alignItems={["center", "flex-start"]} className="DarkFeaturesDescription" spacing={2}>
+        <Text as="h2" color="white" fontSize={["3xl", "4xl"]} fontWeight="700" letterSpacing="-1px">
           {props.title}
         </Text>
         <Text
-          color="secondary.500"
+          color="white"
           fontSize="md"
           lineHeight="1.8"
           maxWidth="container.md"
@@ -25,4 +25,4 @@ const TopFeaturesDescription = (props: Feature) => {
   );
 };
 
-export default TopFeaturesDescription;
+export default DarkFeaturesDescription;

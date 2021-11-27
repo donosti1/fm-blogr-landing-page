@@ -2,42 +2,39 @@ import React from "react";
 import {Stack} from "@chakra-ui/react";
 
 import Phrase from "./components/Phrase";
-import TopFeaturesDescription from "./components/TopFeaturesDescription";
+import FeaturesDescription from "./components/FeaturesDescription";
 
 const featuresItems = [
   {
     id: 0,
-    title: "Quick Search",
+    title: "Free, open, simple",
     feature:
-      "Easily search your snippets by content, category, web address, application, and more. ",
+      "Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.",
   },
   {
     id: 1,
-    title: "iCloud Sync",
-    feature: "Instantly saves and syncs snippets across all your devices.",
-  },
-  {
-    id: 2,
-    title: "Complete History",
-    feature: "Retrieve any snippets from the first moment you started using the app.",
+    title: "Powerful tooling",
+    feature:
+      "Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.",
   },
 ];
 const TopFeatures = () => {
-  const items = featuresItems.map((it) => <TopFeaturesDescription key={it.id} {...it} />);
+  const items = featuresItems.map((it) => <FeaturesDescription key={it.id} {...it} />);
 
   return (
     <>
       <Stack
-        backgroundImage="url('/assets/image-computer.png')"
-        backgroundPosition={["50%  35%", "-25%  100%", "-4%  100%"]}
+        backgroundImage="url('/assets/illustration-laptop-desktop.svg')"
+        backgroundPosition={["50%  35%", "-40%  50%"]}
         backgroundRepeat={["no-repeat", "no-repeat"]}
-        backgroundSize={["90%", "60%", "50%"]}
+        backgroundSize={["90%", "60%"]}
         className="TopFeatures"
-        spacing={[80, 24, 28]}
+        paddingBottom={[8, 56]}
+        paddingTop={[8, 64]}
         width="100%"
       >
-        <Stack direction="row-reverse" paddingBottom={[8, 28, 24]} paddingRight={[0, 32]}>
-          <Stack spacing={12} width={["100%", "35%"]}>
+        <Stack direction="row-reverse" paddingRight={[0, 28]}>
+          <Stack spacing={12} width={["100%", "42%"]}>
             {items}
           </Stack>
         </Stack>

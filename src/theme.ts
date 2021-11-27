@@ -16,8 +16,10 @@ export default extendTheme({
       900: "hsl(240, 10%, 16%)",
     },
     secondary: {
+      50: "#eaeaec",
       100: "hsl(240, 2%, 79%)",
       500: "hsl(207, 13%, 34%)",
+      700: "#393a58",
     },
   },
   sizes: {

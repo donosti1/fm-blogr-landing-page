@@ -5,7 +5,7 @@ interface PhraseComponents {
 }
 const TopPhrase = (props: PhraseComponents) => {
   return (
-    <Stack alignItems="center" className="Phrase" paddingY={12} spacing={3}>
+    <Stack alignItems="center" className="Phrase">
       <Text
         as="h1"
         color="primary.500"
