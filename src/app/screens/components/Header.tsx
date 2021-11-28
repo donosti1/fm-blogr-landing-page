@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   Accordion,
   AccordionButton,
+  AccordionIcon,
   AccordionItem,
+  AccordionPanel,
   Box,
   Button,
   Image,
@@ -73,46 +75,37 @@ const Header = () => {
     );
   };
   const AccordionMenuItem = (props: menuComponents) => {
-    const productMenuList = props.menuItems.map((mi) => <div key={mi.id} className="Test" />);
+    const productMenuList = props.menuItems.map((mi) => (
+      <Button key={mi.id} variant="mobile-menu-link">
+        {mi.label}
+      </Button>
+    ));
 
     return (
       <>
-        <Text>Hola</Text>
-        {/* <Menu>
-        {({isOpen}) => (
-          <>
-            <MenuButton
-              as={Button}
-              rightIcon={
-                <ChevronDownIcon
-                  display="block"
-                  transform={isOpen ? "rotate(-180deg)" : "rotate(0deg)"}
-                  transition="linear .25s"
-                />
-              }
-              variant="unstyled"
+        <AccordionItem _last={{borderTopWidth: 0}} borderTopWidth={0}>
+          <h2>
+            <AccordionButton
+              _focus={{outline: "1px #ccc dotted"}}
+              _hover={{backgroundColor: "transparent"}}
+              color="primary.500"
+              fontFamily="Ubuntu"
+              fontSize="lg"
+              fontWeight="700"
+              justifyContent="center"
             >
-              {props.menuLabel}
-            </MenuButton>
-            <MenuList lineHeight="1.1" minWidth={44} paddingX={4} paddingY={6}>
-              {productMenuList}
-            </MenuList>
-          </>
-        )}
-      </Menu> */}
+              <Box paddingRight={2}>{props.menuLabel}</Box>
+              <AccordionIcon color="primary.400" />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel background="secondary.50" borderRadius="md" pb={4} width="100%">
+            <Stack>{productMenuList}</Stack>
+          </AccordionPanel>
+        </AccordionItem>
       </>
     );
   };
-  /* const navBar = navItems.map((ni) => (
-    <Text
-      key={ni.id}
-      _hover={{cursor: "pointer", color: "primary.500"}}
-      textAlign={["center", "left"]}
-    >
-      {ni.label}
-    </Text>
-  ));
-   */ const MenuToggle = ({toggle, isOpen}: {toggle: any; isOpen: any}) => {
+  const MenuToggle = ({toggle, isOpen}: {toggle: any; isOpen: any}) => {
     return (
       <Box display={["flex", "none"]} onClick={toggle}>
         {isOpen ? <CloseIcon /> : <MenuIcon />}
@@ -135,11 +128,27 @@ const Header = () => {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = React.useState(false);
   const toggleMobileMenu = () => setMobileMenuIsOpen(!mobileMenuIsOpen);
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, {passive: true});
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Stack
         alignItems="center"
         as="header"
+        backgroundColor={scrollPosition > 64 ? "hsla(355, 100%, 74%,.90)" : "transparent"}
         className="Header"
         direction="row"
         justifyContent="space-between"
@@ -174,7 +183,7 @@ const Header = () => {
       {mobileMenuIsOpen && (
         <Stack
           alignItems="center"
-          backgroundColor="blackAlpha.600"
+          backgroundColor="hsla(355, 100%, 74%,.90)"
           height="100%"
           position="absolute"
           spacing={0}
@@ -183,27 +192,42 @@ const Header = () => {
           zIndex="90"
         >
           <Stack
+            alignItems="center"
             backgroundColor="#fffbf8"
             borderRadius="xl"
             color="secondary.600"
-            divider={<StackDivider role="separator" />}
             overflow={mobileMenuIsOpen ? "hidden" : "unset"}
+            paddingY={8}
             position="fixed"
             spacing={0}
             top={20}
             width="90%"
             zIndex="100"
           >
-            <Stack>
-              <Accordion>
-                <AccordionMenuItem menuItems={productMenuItems} menuLabel="Product" />
-                <AccordionMenuItem menuItems={companyMenuItems} menuLabel="Company" />
-                <AccordionMenuItem menuItems={connectMenuItems} menuLabel="Connect" />
-              </Accordion>
-            </Stack>
-            <Stack direction="column">
-              <Button variant="header-link">Login</Button>
-              <Button variant="header-button">Sign Up</Button>
+            <Stack
+              alignItems="center"
+              divider={<StackDivider alignSelf="center" role="separator" width="80%" />}
+              width="100%"
+            >
+              <Stack width="90%">
+                <Accordion allowToggle>
+                  <AccordionMenuItem menuItems={productMenuItems} menuLabel="Product" />
+                  <AccordionMenuItem menuItems={companyMenuItems} menuLabel="Company" />
+                  <AccordionMenuItem menuItems={connectMenuItems} menuLabel="Connect" />
+                </Accordion>
+              </Stack>
+              <Stack direction="column">
+                <Button
+                  fontFamily="Ubuntu"
+                  fontSize="lg"
+                  fontWeight="700"
+                  paddingY={6}
+                  variant="mobile-menu-link"
+                >
+                  Login
+                </Button>
+                <Button variant="mobile-menu-button">Sign Up</Button>
+              </Stack>
             </Stack>
           </Stack>
         </Stack>

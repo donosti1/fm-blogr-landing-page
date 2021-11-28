@@ -6,8 +6,8 @@ This is a solution to the [Blogr landing page challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-<!--   - [Screenshot](#screenshot)
-  - [Links](#links) -->
+  - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -23,7 +23,7 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-<!-- ### Screenshot
+### Screenshot
 
 ![](./screenshot.jpg)
 
@@ -31,7 +31,7 @@ Users should be able to:
 
 - Solution URL: [https://github.com/donosti1/fm-blogr-landing-page](https://github.com/donosti1/fm-blogr-landing-page)
 - Live Site URL: [https://fm-blogr-landing-page-donosti1.vercel.app/](https://fm-blogr-landing-page-donosti1.vercel.app/)
- -->
+
 ## My process
 
 ### Built with
@@ -40,6 +40,7 @@ Users should be able to:
 - [Chakra UI](https://chakra-ui.com/) - React Component library
 - [ViteJS](https://vitejs.dev/) - ViteJS
 - Responsive Design
+- Mobile menu with accordions and dividers
 - Gradients & bgImage
 
 ## Author

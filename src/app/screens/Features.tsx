@@ -18,7 +18,7 @@ const featuresItems = [
       "Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.",
   },
 ];
-const TopFeatures = () => {
+const Features = () => {
   const items = featuresItems.map((it) => <FeaturesDescription key={it.id} {...it} />);
 
   return (
@@ -32,7 +32,7 @@ const TopFeatures = () => {
         backgroundPosition={["50%  5%", "-40%  50%"]}
         backgroundRepeat={["no-repeat", "no-repeat"]}
         backgroundSize={["100%", "60%"]}
-        className="TopFeatures"
+        className="Features"
         paddingBottom={[24, 56]}
         paddingTop={[80, 64]}
         width="100%"
@@ -42,7 +42,7 @@ const TopFeatures = () => {
           justifyContent={["center", "flex-start"]}
           paddingRight={[0, 28]}
         >
-          <Stack spacing={12} width={["80%", "42%"]}>
+          <Stack spacing={12} width={["80%", "68%"]}>
             {items}
           </Stack>
         </Stack>
@@ -51,4 +51,4 @@ const TopFeatures = () => {
   );
 };
 
-export default TopFeatures;
+export default Features;

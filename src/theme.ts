@@ -67,6 +67,24 @@ export default extendTheme({
             textDecoration: "underline",
           },
         },
+        "mobile-menu-link": {
+          bg: "transparent",
+          color: "primary.500",
+          h: 8,
+          _hover: {
+            textDecoration: "underline",
+          },
+        },
+        "mobile-menu-button": {
+          bg: "linear-gradient(to right,hsl(13, 100%, 72%),hsl(353, 100%, 62%))",
+          color: "white",
+          fontWeight: "900",
+          h: 12,
+          px: 12,
+          _hover: {
+            textDecoration: "underline",
+          },
+        },
         link: {
           bg: "transparent",
           color: "white",
@@ -126,5 +144,11 @@ export default extendTheme({
         },
       },
     },
+    /* Accordion: {
+      baseStyle: {
+        
+        
+      },
+    }, */
   },
 });
